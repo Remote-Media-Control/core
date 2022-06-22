@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option go_package = "github.com/Remote-Media-Control/core/proto";
+
+option csharp_namespace = "rmc_windows";
+
+package proto;
+
+service RemotePlayer {
+  rpc Run(RunRequest) returns (Empty) {}
+  rpc Info(Empty) returns (InfoResponse) {}
+}
+
+enum Key {
+  NONE = 0;
+  NEXT = 1;
+  PREV = 2;
+  PAUSE = 3;
+  PLAY = 4;
+};
+
+enum PlayerStatus {
+    UNKNOWN = 0;
+    PLAYING = 1;
+    PAUSED = 2;
+}
+
+message Empty {}
+
+message RunRequest { 
+    Key key = 1;
+}
+
+message InfoResponse { 
+    string song_name = 1;
+    string artist_name = 2;
+    PlayerStatus status = 3;
+}
