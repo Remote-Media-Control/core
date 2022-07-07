@@ -24,3 +24,14 @@ There is also a server implementation, but so far its functionality is limited.
 RMC uses `grpc` + `protobuf`, currently over insecure http.
 
 If you wish to implement custom client/server, you can find (and you must) protocol at [proto.proto](proto/proto.proto)
+
+## TODO
+
+- Servers
+  - [ ] server for macos
+  - [ ] server for android
+  - [ ] server for linux
+- Protocol
+  - [ ] Support for multiple media sources
+  - [ ] Drop HTTP and use secure scheme
+- [ ] Create CI
